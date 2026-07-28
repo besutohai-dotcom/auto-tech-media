@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Auto Blogger Engine - GitHub Pages Native Edition (5 Articles Version)
+Auto Blogger Engine - Dedicated Portal Home Page & Native GitHub Pages Edition
 """
 import os
 import datetime
@@ -62,8 +62,6 @@ TREND_TOPICS = [
 </table>
 
 <h2>3. 【実践コード】DeepSeek/Claude APIで記事を自動生成するPythonスクリプト</h2>
-<p>以下は、DeepSeek APIとClaude APIを連携させ、プログラマブルに記事本文を全自動生成する実際のPythonソースコードです。</p>
-
 <div class="code-block-header">📄 ai_hybrid_writer.py （コピペして使用可能）</div>
 <pre><code>import urllib.request
 import json
@@ -468,6 +466,7 @@ def generate_site():
 
     now_str = datetime.datetime.now().strftime("%Y-%m-%d")
 
+    # Generate Card Grid for all articles
     article_cards_html = ""
     for topic in TREND_TOPICS:
         article_cards_html += f"""
@@ -487,15 +486,32 @@ def generate_site():
         items = "".join([f"<li>{item}</li>" for item in toc_list])
         return items
 
-    # Generate index.html (Main Page - Latest Article Topic 0)
-    main_topic = TREND_TOPICS[0]
+    # === DEDICATED PORTAL HOME PAGE CONTENT (index.html) ===
+    hero_topic = TREND_TOPICS[0]
+    portal_home_content = f"""
+    <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(6, 182, 212, 0.2)); border: 1px solid var(--primary); border-radius: 20px; padding: 2.5rem; margin-bottom: 3rem; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.25);">
+      <span class="badge-cat" style="margin-bottom: 1rem; display: inline-block;">🔥 注目ピックアップ速報</span>
+      <h2 style="font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 1rem; border: none; padding: 0;">
+        <a href="{hero_topic['file_name']}" style="color: #fff; text-decoration: none;">{hero_topic['title']}</a>
+      </h2>
+      <p style="font-size: 1.05rem; color: #cbd5e1; margin-bottom: 1.5rem;">{hero_topic['summary']}</p>
+      <a href="{hero_topic['file_name']}" class="cta-button">👉 この記事を読む（完全無料）</a>
+    </div>
 
-    index_html = template.replace("{{MAIN_TITLE}}", main_topic["title"])
-    index_html = index_html.replace("{{MAIN_TAG}}", main_topic["tag"])
+    <h2 style="font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem;">
+      <i data-lucide="layers" style="color: var(--cyan);"></i> 最新テクノロジー・AI自動化記事一覧
+    </h2>
+    <div class="recent-grid" style="margin-top: 0;">
+      {article_cards_html}
+    </div>
+    """
+
+    index_html = template.replace("{{MAIN_TITLE}}", "AUTO TECH MEDIA | 完全自動AIテクノロジー＆収益化ポータル")
+    index_html = index_html.replace("{{MAIN_TAG}}", "TOP ポータル")
     index_html = index_html.replace("{{MAIN_DATE}}", now_str)
-    index_html = index_html.replace("{{MAIN_HERO_IMG}}", main_topic["img"])
-    index_html = index_html.replace("{{MAIN_TOC_ITEMS}}", render_toc_html(main_topic["toc"]))
-    index_html = index_html.replace("{{MAIN_CONTENT}}", main_topic["content"])
+    index_html = index_html.replace("{{MAIN_HERO_IMG}}", hero_topic["img"])
+    index_html = index_html.replace("{{MAIN_TOC_ITEMS}}", "<li>1. 注目ピックアップ速報</li><li>2. 最新記事一覧</li>")
+    index_html = index_html.replace("{{MAIN_CONTENT}}", portal_home_content)
     index_html = index_html.replace("{{ARTICLE_CARDS}}", article_cards_html)
     
     for target_dir in [DIST_DIR, ROOT_DIR]:
@@ -517,7 +533,7 @@ def generate_site():
             with open(page_path, "w", encoding="utf-8") as f:
                 f.write(art_html)
 
-    # Generate dashboard.html with 5 Articles count
+    # Generate dashboard.html
     dashboard_content = f"""
     <h2>🤖 AUTO TECH MEDIA リアルタイム自動収益＆アクセス公開ダッシュボード</h2>
     <p>当メディア「AUTO TECH MEDIA」は、人間が手作業を一切行わない<b>「全自動AIシステム」</b>によって構築・運用されています。完全無料で動作するリアルタイムアクセスカウンターと収益データを公開しています。</p>
@@ -655,7 +671,7 @@ def generate_site():
         with open(os.path.join(target_dir, "kit.html"), "w", encoding="utf-8") as f:
             f.write(kit_html)
 
-    print(f"✅ [ARTICLE 5 DEPLOYED] 新記事 (art-5.html) を含む全サイトのレンダリングが完了しました。")
+    print(f"✅ [DEDICATED PORTAL HOME CREATED] ポータル型ホーム画面 (index.html) を全自動生成しました。")
 
 if __name__ == "__main__":
     generate_site()
