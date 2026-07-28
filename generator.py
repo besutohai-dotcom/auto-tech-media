@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Auto Blogger Engine - Free Real-time Access Counter Included Edition
+Auto Blogger Engine - GitHub Pages Native Edition (Outputs to root & dist)
 """
 import os
 import datetime
+import shutil
 
 TEMPLATE_PATH = os.path.join(os.path.dirname(__file__), "templates", "article_template.html")
 DIST_DIR = os.path.join(os.path.dirname(__file__), "dist")
+ROOT_DIR = os.path.dirname(__file__)
 
 TREND_TOPICS = [
     {
@@ -393,8 +395,10 @@ def generate_site():
     index_html = index_html.replace("{{MAIN_CONTENT}}", main_topic["content"])
     index_html = index_html.replace("{{ARTICLE_CARDS}}", article_cards_html)
     
-    with open(os.path.join(DIST_DIR, "index.html"), "w", encoding="utf-8") as f:
-        f.write(index_html)
+    # Save to dist/ AND root directory for instant GitHub Pages compatibility!
+    for target_dir in [DIST_DIR, ROOT_DIR]:
+        with open(os.path.join(target_dir, "index.html"), "w", encoding="utf-8") as f:
+            f.write(index_html)
 
     # Generate Individual Standalone Article Pages
     for topic in TREND_TOPICS:
@@ -406,11 +410,12 @@ def generate_site():
         art_html = art_html.replace("{{MAIN_CONTENT}}", topic["content"])
         art_html = art_html.replace("{{ARTICLE_CARDS}}", article_cards_html)
         
-        page_path = os.path.join(DIST_DIR, topic["file_name"])
-        with open(page_path, "w", encoding="utf-8") as f:
-            f.write(art_html)
+        for target_dir in [DIST_DIR, ROOT_DIR]:
+            page_path = os.path.join(target_dir, topic["file_name"])
+            with open(page_path, "w", encoding="utf-8") as f:
+                f.write(art_html)
 
-    # Generate dashboard.html with FREE Real-time Counter Integration
+    # Generate dashboard.html
     dashboard_content = """
     <h2>🤖 AUTO TECH MEDIA リアルタイム自動収益＆アクセス公開ダッシュボード</h2>
     <p>当メディア「AUTO TECH MEDIA」は、人間が手作業を一切行わない<b>「全自動AIシステム」</b>によって構築・運用されています。完全無料で動作するリアルタイムアクセスカウンターと収益データを公開しています。</p>
@@ -446,7 +451,7 @@ def generate_site():
       <tbody>
         <tr>
           <td><b>Phase 1</b></td>
-          <td>全自動AIシステム構築＆Netlify Direct API自動化</td>
+          <td>全自動AIシステム構築＆GitHub Pages無制限化</td>
           <td><b style="color:#34d399;">✅ 完了 (100%)</b></td>
         </tr>
         <tr>
@@ -474,7 +479,6 @@ def generate_site():
     </div>
 
     <script>
-      // Free Real-time Visit Counter API (No login required)
       fetch('https://api.counterapi.dev/v1/auto-tech-media-official-live/visits/up')
         .then(res => res.json())
         .then(data => {
@@ -498,8 +502,9 @@ def generate_site():
     dash_html = dash_html.replace("{{MAIN_CONTENT}}", dashboard_content)
     dash_html = dash_html.replace("{{ARTICLE_CARDS}}", article_cards_html)
 
-    with open(os.path.join(DIST_DIR, "dashboard.html"), "w", encoding="utf-8") as f:
-        f.write(dash_html)
+    for target_dir in [DIST_DIR, ROOT_DIR]:
+        with open(os.path.join(target_dir, "dashboard.html"), "w", encoding="utf-8") as f:
+            f.write(dash_html)
 
     # Generate kit.html
     kit_content = """
@@ -544,10 +549,11 @@ def generate_site():
     kit_html = kit_html.replace("{{MAIN_CONTENT}}", kit_content)
     kit_html = kit_html.replace("{{ARTICLE_CARDS}}", article_cards_html)
 
-    with open(os.path.join(DIST_DIR, "kit.html"), "w", encoding="utf-8") as f:
-        f.write(kit_html)
+    for target_dir in [DIST_DIR, ROOT_DIR]:
+        with open(os.path.join(target_dir, "kit.html"), "w", encoding="utf-8") as f:
+            f.write(kit_html)
 
-    print(f"✅ [FREE REALTIME COUNTER INTEGRATED] dashboard.html 内に完全無料リアルタイムPVカウンターを組み込みました。")
+    print(f"✅ [GITHUB PAGES NATIVE READY] Rootおよびdistに全HTMLを出力しました。")
 
 if __name__ == "__main__":
     generate_site()
