@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Auto Blogger Engine - Dedicated Portal Home Page & Native GitHub Pages Edition
+Auto Blogger Engine - Dedicated Portal Home Layout Fixed Edition
 """
 import os
 import datetime
@@ -486,37 +486,186 @@ def generate_site():
         items = "".join([f"<li>{item}</li>" for item in toc_list])
         return items
 
-    # === DEDICATED PORTAL HOME PAGE CONTENT (index.html) ===
+    # === CLEAN DEDICATED PORTAL HOME HTML (index.html) ===
     hero_topic = TREND_TOPICS[0]
-    portal_home_content = f"""
-    <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(6, 182, 212, 0.2)); border: 1px solid var(--primary); border-radius: 20px; padding: 2.5rem; margin-bottom: 3rem; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.25);">
-      <span class="badge-cat" style="margin-bottom: 1rem; display: inline-block;">🔥 注目ピックアップ速報</span>
-      <h2 style="font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 1rem; border: none; padding: 0;">
-        <a href="{hero_topic['file_name']}" style="color: #fff; text-decoration: none;">{hero_topic['title']}</a>
-      </h2>
-      <p style="font-size: 1.05rem; color: #cbd5e1; margin-bottom: 1.5rem;">{hero_topic['summary']}</p>
-      <a href="{hero_topic['file_name']}" class="cta-button">👉 この記事を読む（完全無料）</a>
-    </div>
-
-    <h2 style="font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem;">
-      <i data-lucide="layers" style="color: var(--cyan);"></i> 最新テクノロジー・AI自動化記事一覧
-    </h2>
-    <div class="recent-grid" style="margin-top: 0;">
-      {article_cards_html}
-    </div>
-    """
-
-    index_html = template.replace("{{MAIN_TITLE}}", "AUTO TECH MEDIA | 完全自動AIテクノロジー＆収益化ポータル")
-    index_html = index_html.replace("{{MAIN_TAG}}", "TOP ポータル")
-    index_html = index_html.replace("{{MAIN_DATE}}", now_str)
-    index_html = index_html.replace("{{MAIN_HERO_IMG}}", hero_topic["img"])
-    index_html = index_html.replace("{{MAIN_TOC_ITEMS}}", "<li>1. 注目ピックアップ速報</li><li>2. 最新記事一覧</li>")
-    index_html = index_html.replace("{{MAIN_CONTENT}}", portal_home_content)
-    index_html = index_html.replace("{{ARTICLE_CARDS}}", article_cards_html)
     
+    clean_index_html = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUTO TECH MEDIA | 完全自動AIテクノロジー＆収益化ポータル</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6972448035347915" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {{
+      --bg: #07090e;
+      --card-bg: rgba(15, 23, 42, 0.85);
+      --border: rgba(255, 255, 255, 0.1);
+      --primary: #6366f1;
+      --primary-glow: rgba(99, 102, 241, 0.3);
+      --cyan: #06b6d4;
+      --accent: #ec4899;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }}
+    * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+    body {{
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }}
+    .header {{
+      background: rgba(7, 9, 14, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 1.1rem 2.5rem;
+      position: sticky; top: 0; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+    }}
+    .brand {{ display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }}
+    .brand-icon {{
+      width: 40px; height: 40px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 15px var(--primary-glow);
+    }}
+    .brand-icon i {{ color: #fff; width: 22px; height: 22px; }}
+    .brand-text {{ font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 900; font-size: 1.25rem; color: #fff; }}
+    .nav-links {{ display: flex; gap: 1.25rem; font-size: 0.9rem; font-weight: 600; }}
+    .nav-btn {{ color: var(--muted); text-decoration: none; padding: 4px 10px; border-radius: 6px; }}
+    .nav-btn:hover, .nav-btn.active {{ color: #fff; background: rgba(255,255,255,0.08); }}
+    .nav-btn.highlight-nav {{ color: #38bdf8; border: 1px solid rgba(56,189,248,0.4); background: rgba(56,189,248,0.1); }}
+    
+    .container {{
+      max-width: 1200px; margin: 2.5rem auto; padding: 0 1.5rem;
+      display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem;
+    }}
+    @media (max-width: 960px) {{ .container {{ grid-template-columns: 1fr; }} }}
+
+    .hero-banner {{
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(6, 182, 212, 0.25));
+      border: 1px solid var(--primary);
+      border-radius: 24px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 15px 50px rgba(99, 102, 241, 0.3);
+      position: relative; overflow: hidden;
+    }}
+    .badge-cat {{
+      background: linear-gradient(135deg, var(--primary), #a855f7);
+      color: #fff; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 99px; display: inline-block;
+    }}
+    .hero-banner h1 {{
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.2rem; font-weight: 800; color: #fff; margin: 1rem 0; line-height: 1.3;
+    }}
+    .hero-banner p {{ font-size: 1.1rem; color: #cbd5e1; margin-bottom: 1.75rem; max-width: 800px; }}
+    
+    .cta-button {{
+      display: inline-block; background: linear-gradient(135deg, var(--primary), var(--cyan));
+      color: #fff; text-decoration: none; font-weight: 800; font-size: 1rem; padding: 0.85rem 2rem; border-radius: 99px;
+      box-shadow: 0 0 20px var(--primary-glow); transition: transform 0.2s ease;
+    }}
+    .cta-button:hover {{ transform: translateY(-3px); }}
+
+    .section-title {{
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff;
+      margin-bottom: 1.75rem; display: flex; align-items: center; gap: 0.6rem;
+    }}
+    
+    .recent-grid {{
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.75rem;
+    }}
+    a.recent-card {{
+      display: block; text-decoration: none; background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 20px; overflow: hidden; transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }}
+    a.recent-card:hover {{
+      transform: translateY(-6px); border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    }}
+    .recent-img-wrapper {{ height: 180px; width: 100%; overflow: hidden; background: #1e293b; }}
+    .recent-img-wrapper img {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
+    .recent-content {{ padding: 1.5rem; }}
+    .recent-content h3 {{ font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.6rem; line-height: 1.45; }}
+    .recent-content p {{ font-size: 0.875rem; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }}
+
+    .side-card {{
+      background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 1.5rem; margin-bottom: 1.75rem;
+    }}
+    .side-title {{ font-size: 1.05rem; font-weight: 700; margin-bottom: 1.25rem; color: #fff; display: flex; align-items: center; gap: 0.6rem; }}
+
+    .footer {{
+      background: rgba(5, 7, 11, 0.95); border-top: 1px solid var(--border); margin-top: 5rem; padding: 3rem 2rem 2rem 2rem; color: var(--muted); font-size: 0.875rem;
+    }}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="brand">
+      <div class="brand-icon"><i data-lucide="zap"></i></div>
+      <span class="brand-text">AUTO TECH MEDIA</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-btn active">ホーム</a>
+      <a href="art-1.html" class="nav-btn">AI・自動化</a>
+      <a href="art-2.html" class="nav-btn">ADHD・時短ハック</a>
+      <a href="art-3.html" class="nav-btn">副業・マネタイズ</a>
+      <a href="art-4.html" class="nav-btn">最新ガジェット</a>
+      <a href="dashboard.html" class="nav-btn highlight-nav">📊 収益公開</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main>
+      <!-- HERO BANNER -->
+      <div class="hero-banner">
+        <span class="badge-cat">🔥 注目ピックアップ速報</span>
+        <h1><a href="{hero_topic['file_name']}" style="color: #fff; text-decoration: none;">{hero_topic['title']}</a></h1>
+        <p>{hero_topic['summary']}</p>
+        <a href="{hero_topic['file_name']}" class="cta-button">👉 今すぐこの記事を読む（無料）</a>
+      </div>
+
+      <!-- ARTICLES GRID -->
+      <h2 class="section-title"><i data-lucide="sparkles" style="color: var(--cyan);"></i> 最新AIテクノロジー・自動化記事一覧 (全5本)</h2>
+      <div class="recent-grid">
+        {article_cards_html}
+      </div>
+    </main>
+
+    <aside>
+      <div class="side-card" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15)); border-color: rgba(56, 189, 248, 0.4);">
+        <div class="side-title"><i data-lucide="bar-chart-2" style="color: var(--cyan);"></i> 自動収益生中継</div>
+        <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.8rem;">当メディアの最新PV数・自動収益データを完全公開中！</p>
+        <a href="dashboard.html" class="cta-button" style="font-size: 0.85rem; padding: 0.5rem 1.25rem; width: 100%; text-align: center;">📊 収益ダッシュボードを見る</a>
+      </div>
+
+      <div class="side-card">
+        <div class="side-title"><i data-lucide="trending-up" style="color: var(--accent);"></i> 人気急上昇テーマ</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+          <a href="art-5.html" class="badge-cat" style="background: rgba(99, 102, 241, 0.2); color: #a5b4fc; text-decoration:none;">#DeepSeek</a>
+          <a href="art-1.html" class="badge-cat" style="background: rgba(6, 182, 212, 0.2); color: #38bdf8; text-decoration:none;">#AI副業2026</a>
+          <a href="art-2.html" class="badge-cat" style="background: rgba(236, 72, 153, 0.2); color: #f472b6; text-decoration:none;">#ADHD生産性</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer" style="text-align:center;">
+    <p>&copy; 2026 AUTO TECH MEDIA. All rights reserved. Powered by Antigravity Auto Engine</p>
+  </footer>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>
+"""
+
     for target_dir in [DIST_DIR, ROOT_DIR]:
         with open(os.path.join(target_dir, "index.html"), "w", encoding="utf-8") as f:
-            f.write(index_html)
+            f.write(clean_index_html)
 
     # Generate Individual Standalone Article Pages
     for topic in TREND_TOPICS:
@@ -671,7 +820,7 @@ def generate_site():
         with open(os.path.join(target_dir, "kit.html"), "w", encoding="utf-8") as f:
             f.write(kit_html)
 
-    print(f"✅ [DEDICATED PORTAL HOME CREATED] ポータル型ホーム画面 (index.html) を全自動生成しました。")
+    print(f"✅ [CLEAN PORTAL HOME GENERATED] 専用ポータルTOP (index.html) を完全にレンダリングしました。")
 
 if __name__ == "__main__":
     generate_site()
