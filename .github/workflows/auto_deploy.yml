@@ -1,10 +1,17 @@
-name: Auto Tech Media Daily Automated Deploy Engine
+name: Auto Tech Media Daily Automated Deploy to GitHub Pages
 
 on:
   schedule:
     # 毎日日本時間 午前9:00 (UTC 00:00) に完全自動発火
     - cron: '0 0 * * *'
-  workflow_dispatch: # GitHub画面から手動でいつでも即時発火可能
+  workflow_dispatch: # 手動でいつでも即時発火可能
+  push:
+    branches:
+      - main
+
+# GitHub Pages への自動デプロイ権限を設定
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -18,12 +25,14 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Generate High-Quality Articles & Build Dist
+      - name: Generate High-Quality Articles & Self-Audit
         run: |
           python generator.py
+          python audit_self.py
+          python sns_bot.py
 
-      - name: Deploy Directly to Netlify Production
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        run: |
-          python deploy.py
+      - name: Deploy to GitHub Pages (100% Free & Unlimited)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

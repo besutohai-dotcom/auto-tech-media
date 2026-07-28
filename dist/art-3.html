@@ -114,6 +114,11 @@
       color: #fff;
       background: rgba(255, 255, 255, 0.08);
     }
+    .nav-btn.highlight-nav {
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      background: rgba(56, 189, 248, 0.1);
+    }
 
     .search-box {
       position: relative;
@@ -331,7 +336,6 @@
     }
     .content-body li { margin-bottom: 0.4rem; }
 
-    /* Code Block Styling */
     .code-block-header {
       background: #1e293b;
       border: 1px solid var(--border);
@@ -361,7 +365,6 @@
       line-height: 1.6;
     }
 
-    /* Pro Media Tables */
     .pro-table {
       width: 100%;
       border-collapse: collapse;
@@ -387,7 +390,6 @@
     }
     .pro-table tr:last-child td { border-bottom: none; }
 
-    /* CTA Call to Action Box */
     .cta-box {
       background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(236, 72, 153, 0.15));
       border: 1px solid rgba(99, 102, 241, 0.4);
@@ -396,6 +398,11 @@
       margin: 2.25rem 0;
       text-align: center;
       box-shadow: 0 8px 30px rgba(99, 102, 241, 0.2);
+    }
+    .cta-box.highlight-cta {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(6, 182, 212, 0.2));
+      border-color: var(--accent);
+      box-shadow: 0 8px 35px rgba(236, 72, 153, 0.3);
     }
     .cta-box h3 { color: #fff; font-size: 1.25rem; margin-bottom: 0.5rem; }
     .cta-box p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
@@ -416,7 +423,6 @@
       box-shadow: 0 0 30px rgba(6, 182, 212, 0.6);
     }
 
-    /* FAQ Section */
     .faq-list {
       display: flex;
       flex-direction: column;
@@ -592,6 +598,7 @@
       <a href="art-2.html" class="nav-btn">ADHD・時短ハック</a>
       <a href="art-3.html" class="nav-btn">副業・マネタイズ</a>
       <a href="art-4.html" class="nav-btn">最新ガジェット</a>
+      <a href="dashboard.html" class="nav-btn highlight-nav">📊 収益公開</a>
     </nav>
 
     <div class="search-box">
@@ -682,10 +689,10 @@
   </tbody>
 </table>
 
-<div class="cta-box">
-  <h3>💰 今すぐ完全自動化メディアを立ち上げたい方へ</h3>
-  <p>AIテクノロジーを活用した全自動Webメディアの全手順をチェック！</p>
-  <a href="art-1.html" class="cta-button">👉 完全自動化メディアの全手順を見る</a>
+<div class="cta-box highlight-cta">
+  <h3>📊 AUTO TECH MEDIA リアルタイム収益公開中！</h3>
+  <p>当サイトが完全自動でいくら稼げているか、PV数と収益データを包み隠さず全公開！</p>
+  <a href="dashboard.html" class="cta-button">👉 収益ダッシュボードを見る</a>
 </div>
 
 <h2>3. 完全自動化ストック資産を構築する3ステップ</h2>
@@ -775,6 +782,12 @@
     </main>
 
     <aside>
+      <div class="side-card" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15)); border-color: rgba(56, 189, 248, 0.4);">
+        <div class="side-title"><i data-lucide="bar-chart-2" style="color: var(--cyan);"></i> 自動収益生中継</div>
+        <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.8rem;">当メディアの最新PV数・自動収益データを完全公開中！</p>
+        <a href="dashboard.html" class="cta-button" style="font-size: 0.85rem; padding: 0.5rem 1.25rem; width: 100%; text-align: center;">📊 収益ダッシュボードを見る</a>
+      </div>
+
       <div class="side-card">
         <div class="side-title"><i data-lucide="trending-up" style="color: var(--accent);"></i> 人気急上昇テーマ</div>
         <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
@@ -824,6 +837,7 @@
           <li><a href="art-2.html">ADHD・時短ハック</a></li>
           <li><a href="art-3.html">副業・マネタイズ</a></li>
           <li><a href="art-4.html">最新ガジェット</a></li>
+          <li><a href="dashboard.html" style="color:#38bdf8;">📊 収益生中継ダッシュボード</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -900,20 +914,21 @@
         <p><b>免責事項：</b> 当サイトはアフィリエイトプログラムにより商品・サービスを紹介しております。商品に関するお問い合わせは、リンク先の販売店様へ直接お願いいたします。</p>
       `,
       contact: `
-        <p>ご意見・ご感想・広告掲載のご依頼は下記よりお気軽にお問い合わせください。</p>
+        <p>ご意見・ご感想・広告掲載のご依頼・構築キットのご予約は下記よりご連絡ください。</p>
         <br>
-        <form onsubmit="event.preventDefault(); alert('お問い合わせを受け付けました！ありがとうございました。'); document.getElementById('legal-modal').classList.remove('active');">
+        <form name="contact" method="POST" data-netlify="true" action="https://formsubmit.co/your-email-here@gmail.com" onsubmit="event.preventDefault(); alert('お問い合わせメッセージを送信しました！内容を確認しご連絡いたします。'); document.getElementById('legal-modal').classList.remove('active');">
+          <input type="hidden" name="form-name" value="contact">
           <div style="margin-bottom:1rem;">
             <label style="display:block; margin-bottom:0.3rem;">お名前</label>
-            <input type="text" required style="width:100%; padding:0.6rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff;">
+            <input type="text" name="name" required style="width:100%; padding:0.6rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff;">
           </div>
           <div style="margin-bottom:1rem;">
             <label style="display:block; margin-bottom:0.3rem;">メールアドレス</label>
-            <input type="email" required style="width:100%; padding:0.6rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff;">
+            <input type="email" name="email" required style="width:100%; padding:0.6rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff;">
           </div>
           <div style="margin-bottom:1rem;">
             <label style="display:block; margin-bottom:0.3rem;">メッセージ</label>
-            <textarea rows="4" required style="width:100%; padding:0.6rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff;"></textarea>
+            <textarea name="message" rows="4" required style="width:100%; padding:0.6rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff;"></textarea>
           </div>
           <button type="submit" style="background:var(--primary); color:#fff; border:none; padding:0.75rem 1.5rem; border-radius:8px; cursor:pointer; font-weight:600;">送信する</button>
         </form>
@@ -925,7 +940,7 @@
         privacy: 'プライバシーポリシー',
         about: '運営者情報 (About Us)',
         tokusho: '特定商取引法に基づく表記・免責事項',
-        contact: 'お問い合わせ (Contact Us)'
+        contact: 'お問い合わせ (Contact Us) / 構築キットお申込み'
       };
       document.getElementById('modal-title').textContent = titles[type];
       document.getElementById('modal-body').innerHTML = legalData[type];

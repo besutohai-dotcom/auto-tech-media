@@ -1,37 +1,37 @@
 # -*- coding: utf-8 -*-
 """
-Auto Blogger Engine - Automated SNS Growth Bot
+Auto Blogger Engine - SNS Marketing Bot with Official Site URL
 """
 import os
-import random
+import json
 
-SITE_URL = "https://superb-fox-32e811.netlify.app/"
+DIST_DIR = os.path.join(os.path.dirname(__file__), "dist")
+OUTPUT_PATH = os.path.join(DIST_DIR, "sns_posts.txt")
 
-SNS_POST_TEMPLATES = [
-    "⚡️【2026年最新】「{title}」\n\nAIを駆使して完全自動化で成果を出す時代が到来しました。まだ手動で消耗していませんか？\n\n▼ 記事の全貌はこちら（完全無料）👇\n{url} \n\n#AI副業 #自動化 #時短ハック",
-    "🧠 ADHD・めんどくさがり屋ほど成功する！\n「{title}」\n\n意志の力に頼らず、AIを外付け脳にして成果を10倍にする思考法をまとめました💡\n\n▼ 今すぐ読む👇\n{url} \n\n#生産性 #自己啓発 #ADHD",
-    "🔥【放置型マネタイズ】自分が動かなくてもチャリンチャリンとお金が入る仕組みの作り方。\n\n「{title}」\n\n▼ 詳細ロードマップはこちら👇\n{url} \n\n#副業初心者 #不労所得 #AI活用"
-]
+SITE_URL = "https://auto-tech-media-official.netlify.app"
 
 def generate_sns_posts():
+    if not os.path.exists(DIST_DIR):
+        os.makedirs(DIST_DIR, exist_ok=True)
+
+    from generator import TREND_TOPICS
+
     posts = []
-    titles = [
-        "人間が何もしない「完全自動化AIメディア」で不労収入を得る全手順",
-        "ADHD・集中力が続かない人のための「AIを外付け脳にする」最強ライフハック",
-        "【放置型】月1万〜5万円を固く稼ぐデジタルストック資産の作り方",
-        "2026年絶対買うべき！作業効率が3倍になる神AIデバイス＆ガジェット5選"
-    ]
+    for topic in TREND_TOPICS:
+        post = f"""🚀 【2026年最新AI自動化ニュース】
+「{topic['title']}」
 
-    for title in titles:
-        template = random.choice(SNS_POST_TEMPLATES)
-        post_text = template.format(title=title, url=SITE_URL)
-        posts.append(post_text)
+▼ 今すぐ完全無料で読む👇
+{SITE_URL}/{topic['file_name']}
 
-    output_path = os.path.join(os.path.dirname(__file__), "dist", "sns_posts.txt")
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write("\n\n=========================================\n\n".join(posts))
+#AI自動化 #副業 #生産性向上 #{topic['tag'].replace('・', '')}
+========================================="""
+        posts.append(post)
 
-    print(f"✅ [SUCCESS] 全自動SNS投稿テキストが生成されました: {output_path}")
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        f.write("\n\n".join(posts))
+
+    print(f"✅ [SUCCESS] 最新公式URL付きSNS投稿テキストが生成されました: {OUTPUT_PATH}")
 
 if __name__ == "__main__":
     generate_sns_posts()

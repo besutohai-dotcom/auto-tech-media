@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Auto Blogger Engine - Netlify Direct Automated Deployer (SSL Fixed)
+Auto Blogger Engine - Netlify Direct Automated Deployer (SSL & Direct Site ID Fixed)
 """
 import os
 import zipfile
@@ -10,7 +10,7 @@ import json
 import ssl
 
 NETLIFY_TOKEN = "nfp_831zneGh45wcjkTXGuUa57jvCoWF6V4Habe3"
-SITE_NAME = "auto-tech-media-official.netlify.app"
+SITE_ID = "e2fca3e7-4282-4b09-8aca-fb0741cbb6a9"  # Fixed Direct Site ID
 DIST_DIR = os.path.join(os.path.dirname(__file__), "dist")
 ZIP_PATH = os.path.join(os.path.dirname(__file__), "dist.zip")
 
@@ -24,32 +24,13 @@ def create_zip():
                 arcname = os.path.relpath(file_path, DIST_DIR)
                 zipf.write(file_path, arcname)
 
-def get_site_id():
-    url = "https://api.netlify.com/api/v1/sites"
-    req = urllib.request.Request(url)
-    req.add_header("Authorization", f"Bearer {NETLIFY_TOKEN}")
-    try:
-        with urllib.request.urlopen(req, context=ssl_context) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
-            for site in data:
-                if site.get('name') == "auto-tech-media-official" or site.get('url') == f"https://{SITE_NAME}":
-                    return site['id']
-            if data:
-                return data[0]['id']
-    except Exception as e:
-        print(f"Site lookup info: {e}")
-    return None
-
 def deploy_to_netlify():
     print("📦 デプロイ用パッケージを作成中...")
     create_zip()
 
-    print("🔍 Netlify サイト情報を取得中...")
-    site_id = get_site_id()
+    deploy_url = f"https://api.netlify.com/api/v1/sites/{SITE_ID}/deploys"
 
-    deploy_url = f"https://api.netlify.com/api/v1/sites/{site_id}/deploys" if site_id else "https://api.netlify.com/api/v1/deploys"
-
-    print(f"🚀 Netlifyへ完全自動デプロイを開始中... (Site ID: {site_id})")
+    print(f"🚀 Netlifyへ完全自動デプロイを開始中... (Site ID: {SITE_ID})")
     with open(ZIP_PATH, 'rb') as f:
         zip_data = f.read()
 

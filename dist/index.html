@@ -114,6 +114,11 @@
       color: #fff;
       background: rgba(255, 255, 255, 0.08);
     }
+    .nav-btn.highlight-nav {
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      background: rgba(56, 189, 248, 0.1);
+    }
 
     .search-box {
       position: relative;
@@ -331,7 +336,6 @@
     }
     .content-body li { margin-bottom: 0.4rem; }
 
-    /* Code Block Styling */
     .code-block-header {
       background: #1e293b;
       border: 1px solid var(--border);
@@ -361,7 +365,6 @@
       line-height: 1.6;
     }
 
-    /* Pro Media Tables */
     .pro-table {
       width: 100%;
       border-collapse: collapse;
@@ -387,7 +390,6 @@
     }
     .pro-table tr:last-child td { border-bottom: none; }
 
-    /* CTA Call to Action Box */
     .cta-box {
       background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(236, 72, 153, 0.15));
       border: 1px solid rgba(99, 102, 241, 0.4);
@@ -396,6 +398,11 @@
       margin: 2.25rem 0;
       text-align: center;
       box-shadow: 0 8px 30px rgba(99, 102, 241, 0.2);
+    }
+    .cta-box.highlight-cta {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(6, 182, 212, 0.2));
+      border-color: var(--accent);
+      box-shadow: 0 8px 35px rgba(236, 72, 153, 0.3);
     }
     .cta-box h3 { color: #fff; font-size: 1.25rem; margin-bottom: 0.5rem; }
     .cta-box p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
@@ -416,7 +423,6 @@
       box-shadow: 0 0 30px rgba(6, 182, 212, 0.6);
     }
 
-    /* FAQ Section */
     .faq-list {
       display: flex;
       flex-direction: column;
@@ -592,6 +598,7 @@
       <a href="art-2.html" class="nav-btn">ADHD・時短ハック</a>
       <a href="art-3.html" class="nav-btn">副業・マネタイズ</a>
       <a href="art-4.html" class="nav-btn">最新ガジェット</a>
+      <a href="dashboard.html" class="nav-btn highlight-nav">📊 収益公開</a>
     </nav>
 
     <div class="search-box">
@@ -684,8 +691,6 @@
 </table>
 
 <h2>3. 【実践コード】Netlify APIで自動デプロイするPythonスクリプト</h2>
-<p>以下は、ローカルで生成したHTMLファイルをZIP圧縮し、NetlifyのAPIを叩いて一瞬で本番サイトへ上書き更新する実際のPythonコードです。</p>
-
 <div class="code-block-header">📄 deploy_automation.py （コピペして使用可能）</div>
 <pre><code>import os
 import zipfile
@@ -699,14 +704,12 @@ DIST_DIR = "./dist"
 ZIP_PATH = "./dist.zip"
 
 def deploy():
-    # 1. 成果物ディレクトリをZIP圧縮
     with zipfile.ZipFile(ZIP_PATH, 'w', zipfile.ZIP_DEFLATED) as zipf:
         for root, dirs, files in os.walk(DIST_DIR):
             for file in files:
                 file_path = os.path.join(root, file)
                 zipf.write(file_path, os.path.relpath(file_path, DIST_DIR))
 
-    # 2. Netlify Direct Deploy APIへ送信
     url = f"https://api.netlify.com/api/v1/sites/{SITE_ID}/deploys"
     with open(ZIP_PATH, 'rb') as f:
         zip_data = f.read()
@@ -725,8 +728,6 @@ if __name__ == "__main__":
 </code></pre>
 
 <h2>4. 【コピペ用】高品質SEO記事を自動生成するAIプロンプト例</h2>
-<p>AI（ChatGPTやClaude）に薄い文章を書かせないための、実践的な指示文（プロンプト）のテンプレートです。</p>
-
 <div class="code-block-header">📝 AI執筆用システムプロンプト指示文</div>
 <pre><code>【役割】
 あなたは月間100万PVのWebメディアを運営するプロのSEOライターです。
@@ -734,35 +735,25 @@ if __name__ == "__main__":
 【指示】
 以下の[キーワード]に基づいて、読者の悩みを解決する3,000文字以上の深掘り記事を作成してください。
 
-【必須構成要素】
-1. H2見出しを4つ〜5つ作成し、目次と100%一致させること。
-2. 抽象的な説明を避け、「ステップ1」「ステップ2」などの具体的な手順を入れること。
-3. 従来手法と最新手法の比較表（HTML tableタグ）を必ず1つ挿入すること。
-4. 記事の末尾に、よくある質問（FAQ）を2つ入れること。
-
 [キーワード]: 2026年 AI 自動化 副業
 </code></pre>
 
-<div class="cta-box">
-  <h3>🚀 手作業ゼロで自動収益化を始めたい方へ</h3>
-  <p>最新のAI自動化テンプレートと構築手順ガイドを無料で公開中！</p>
-  <a href="art-3.html" class="cta-button">👉 自動ストック資産の構築ガイドを見る</a>
+<div class="cta-box highlight-cta">
+  <h3>🔥 【利益率100%】全自動AIメディア構築テンプレート</h3>
+  <p>本サイト「AUTO TECH MEDIA」と同じ完全自動化システム（Pythonスクリプト＋HTMLテンプレート）をまるごと配布中！</p>
+  <a href="kit.html" class="cta-button">👉 システム構築キット（¥4,980）詳細を見る</a>
 </div>
 
 <h2>5. 放置型マネタイズを成立させる3つの収益柱</h2>
 <p><b>1. Google AdSense：</b> 記事内の自動広告を閲覧・クリックされるだけで収益発生。</p>
-<p><b>2. Amazon / 楽天アフィリエイト：</b> 紹介ガジェットの購入経由で3%〜10%の報酬。</p>
-<p><b>3. 高単価ASPアフィリエイト：</b> 無料体験登録1件あたり1,000円〜10,000円の高額報酬。</p>
+<p><b>2. 高単価ASPアフィリエイト（1件1万円〜）：</b> AIスクール無料体験登録やプログラミング講座申込で高額報酬。</p>
+<p><b>3. 自社デジタルコンテンツ直販（利益率100%）：</b> 自動化テンプレートやノウハウの直接販売。</p>
 
 <h2>6. よくある質問 (FAQ)</h2>
 <div class="faq-list">
   <div class="faq-item">
     <div class="faq-q">Q. プログラミング初心者でも構築できますか？</div>
     <div class="faq-a">A. はい。上記で公開しているPythonコードとプロンプトをコピーしてそのまま使うだけで即座に自動化が可能です。</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">Q. サーバー代などの維持費はいくらかかりますか？</div>
-    <div class="faq-a">A. Netlify等の静的ホスティングを活用すれば、月間の維持費は完全無料（0円）で運用可能です。</div>
   </div>
 </div>
 
@@ -840,6 +831,12 @@ if __name__ == "__main__":
     </main>
 
     <aside>
+      <div class="side-card" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15)); border-color: rgba(56, 189, 248, 0.4);">
+        <div class="side-title"><i data-lucide="bar-chart-2" style="color: var(--cyan);"></i> 自動収益生中継</div>
+        <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.8rem;">当メディアの最新PV数・自動収益データを完全公開中！</p>
+        <a href="kit.html" class="cta-button" style="font-size: 0.85rem; padding: 0.5rem 1.25rem; width: 100%; text-align: center;">📊 収益ダッシュボードを見る</a>
+      </div>
+
       <div class="side-card">
         <div class="side-title"><i data-lucide="trending-up" style="color: var(--accent);"></i> 人気急上昇テーマ</div>
         <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
@@ -889,6 +886,7 @@ if __name__ == "__main__":
           <li><a href="art-2.html">ADHD・時短ハック</a></li>
           <li><a href="art-3.html">副業・マネタイズ</a></li>
           <li><a href="art-4.html">最新ガジェット</a></li>
+          <li><a href="dashboard.html" style="color:#38bdf8;">📊 収益生中継ダッシュボード</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -965,20 +963,21 @@ if __name__ == "__main__":
         <p><b>免責事項：</b> 当サイトはアフィリエイトプログラムにより商品・サービスを紹介しております。商品に関するお問い合わせは、リンク先の販売店様へ直接お願いいたします。</p>
       `,
       contact: `
-        <p>ご意見・ご感想・広告掲載のご依頼は下記よりお気軽にお問い合わせください。</p>
+        <p>ご意見・ご感想・広告掲載のご依頼・構築キットのご予約は下記よりご連絡ください。</p>
         <br>
-        <form onsubmit="event.preventDefault(); alert('お問い合わせを受け付けました！ありがとうございました。'); document.getElementById('legal-modal').classList.remove('active');">
+        <form name="contact" method="POST" data-netlify="true" action="https://formsubmit.co/your-email-here@gmail.com" onsubmit="event.preventDefault(); alert('お問い合わせメッセージを送信しました！内容を確認しご連絡いたします。'); document.getElementById('legal-modal').classList.remove('active');">
+          <input type="hidden" name="form-name" value="contact">
           <div style="margin-bottom:1rem;">
             <label style="display:block; margin-bottom:0.3rem;">お名前</label>
-            <input type="text" required style="width:100%; padding:0.6rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff;">
+            <input type="text" name="name" required style="width:100%; padding:0.6rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff;">
           </div>
           <div style="margin-bottom:1rem;">
             <label style="display:block; margin-bottom:0.3rem;">メールアドレス</label>
-            <input type="email" required style="width:100%; padding:0.6rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff;">
+            <input type="email" name="email" required style="width:100%; padding:0.6rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff;">
           </div>
           <div style="margin-bottom:1rem;">
             <label style="display:block; margin-bottom:0.3rem;">メッセージ</label>
-            <textarea rows="4" required style="width:100%; padding:0.6rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff;"></textarea>
+            <textarea name="message" rows="4" required style="width:100%; padding:0.6rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff;"></textarea>
           </div>
           <button type="submit" style="background:var(--primary); color:#fff; border:none; padding:0.75rem 1.5rem; border-radius:8px; cursor:pointer; font-weight:600;">送信する</button>
         </form>
@@ -990,7 +989,7 @@ if __name__ == "__main__":
         privacy: 'プライバシーポリシー',
         about: '運営者情報 (About Us)',
         tokusho: '特定商取引法に基づく表記・免責事項',
-        contact: 'お問い合わせ (Contact Us)'
+        contact: 'お問い合わせ (Contact Us) / 構築キットお申込み'
       };
       document.getElementById('modal-title').textContent = titles[type];
       document.getElementById('modal-body').innerHTML = legalData[type];
