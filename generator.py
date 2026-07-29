@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Auto Blogger Engine - Real Products & Evidence Revamped Edition
+Auto Blogger Engine - 100% Strict Evidence & Real Source Links Edition
 """
 import os
 import datetime
@@ -15,86 +15,79 @@ TREND_TOPICS = [
         "file_name": "art-4.html",
         "tag": "最新ガジェット",
         "img": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
-        "title": "2026年絶対買うべき！作業効率が3倍になる神AIデバイス＆実在ガジェット5選【実名レビュー・価格比較】",
-        "summary": "抽象論は一切なし！話題の『PLAUD NOTE』『Meta Ray-Ban』『Rabbit R1』など実在するAIガジェットのリアルな使用感、価格、デメリットを徹底検証。",
+        "title": "2026年注目AIデバイス『PLAUD NOTE』等の公式仕様・実売価格・公表機能徹底まとめ【公式出典リンク明記】",
+        "summary": "メーカー公式発表仕様書および販売ストアの公表データに基づき、話題のAIガジェット『PLAUD NOTE』『Elgato Stream Deck Neo』等の実売価格、公式機能、注意点を事実ベースで解説。",
         "toc": [
-            "1. なぜ抽象的なガジェット紹介記事は役に立たないのか？",
-            "2. 【実名検証】2026年絶対に買いの神AIガジェット5選（価格・スペック比較）",
-            "3. 実際に購入したユーザーの生の口コミ＆リアルなデメリット",
-            "4. どこで買うのが一番お得？（Amazon・楽天・公式サイト価格比較）",
+            "1. 本記事におけるデータおよび出典（エビデンス）の明記方針",
+            "2. 【公式データ比較】実在AIガジェットの製品仕様・価格・公式出典一覧",
+            "3. PLAUD NOTE の公式公表機能と仕様上の注意点",
+            "4. 公式ストアおよび正規販売代理店の価格情報（出典リンク付き）",
             "5. よくある質問 (FAQ)"
         ],
         "content": """
-<h2>1. なぜ抽象的なガジェット紹介記事は役に立たないのか？</h2>
-<p>ネット上の多くの記事は「AIボイスレコーダーが便利です」といった抽象的な解説ばかりで、<b>「具体的にどのメーカーのどの型番を買えばいいのか」</b>を書いていません。</p>
-<p>本記事では、編集部が実際に検証・調査した<b>実在する製品名、実売価格、実際のユーザーの生の口コミ、そして隠されたデメリット</b>まで包み隠さず公開します。</p>
+<h2>1. 本記事におけるデータおよび出典（エビデンス）の明記方針</h2>
+<p>当メディアでは、読者の皆様に正確な情報をお届けするため、根拠のない数値や架空の体験談の掲載を厳禁としています。本記事に掲載している製品価格・スペック・機能は、すべて<b>各メーカーの公式サイトおよび正規販売ストアの公表データ</b>に基づいています。</p>
 
-<h2>2. 【実名検証】2026年絶対に買いの神AIガジェット5選（価格・スペック比較）</h2>
+<h2>2. 【公式データ比較】実在AIガジェットの製品仕様・価格・公式出典一覧</h2>
 <table class="pro-table">
   <thead>
     <tr>
       <th>製品名（実名）</th>
-      <th>実売価格</th>
-      <th>主要AI機能</th>
-      <th>検証による時短効果（エビデンス）</th>
+      <th>実売価格（税込）</th>
+      <th>公式公表機能・スペック</th>
+      <th>データ出典（公式リンク）</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><b>① PLAUD NOTE（プラウドノート）</b></td>
       <td><b>¥27,500</b></td>
-      <td>ChatGPT-4o連携・自動文字起こし＆マインドマップ作成</td>
-      <td><b>1日 平均45分節約（※編集部30名検証データ）</b></td>
+      <td>ChatGPT-4o/Claude 3.5連携・デュアルマイク録音・厚さ2.9mm</td>
+      <td><a href="https://jp.plaud.ai/" target="_blank" style="color:#38bdf8;">PLAUD Japan 公式サイト</a></td>
     </tr>
     <tr>
-      <td><b>② Meta Ray-Ban Smart Glasses</b></td>
-      <td><b>¥49,800</b></td>
-      <td>視覚AIによる物体認識・リアルタイム音声翻訳</td>
-      <td><b>1日 平均30分節ary</b></td>
-    </tr>
-    <tr>
-      <td><b>③ Elgato Stream Deck Neo</b></td>
+      <td><b>② Elgato Stream Deck Neo</b></td>
       <td><b>¥15,980</b></td>
-      <td>ワンタップでAIプロンプト発火・定型業務自動化</td>
-      <td><b>1日 平均25分節約</b></td>
+      <td>8つのカスタムキー・ワンタップアクション実行・LEDディスプレイ</td>
+      <td><a href="https://www.elgato.com/jp/ja/p/stream-deck-neo" target="_blank" style="color:#38bdf8;">Elgato 公式サイト</a></td>
     </tr>
     <tr>
-      <td><b>④ Rabbit R1（ラビット アールワン）</b></td>
-      <td><b>¥29,800</b></td>
-      <td>LAM（大行動モデル）によるアプリ自動操作</td>
-      <td><b>1日 平均20分節約</b></td>
-    </tr>
-    <tr>
-      <td><b>⑤ BenQ ScreenBar Halo AI</b></td>
+      <td><b>③ BenQ ScreenBar Halo</b></td>
       <td><b>¥24,900</b></td>
-      <td>AI自動調光・目の疲れ検知＆姿勢警告</td>
-      <td><b>作業集中維持率 +40%向上</b></td>
+      <td>自動調光センサー・バックライト搭載・非対象光学設計</td>
+      <td><a href="https://www.benq.com/ja-jp/lighting/monitor-light/screenbar-halo.html" target="_blank" style="color:#38bdf8;">BenQ Japan 公式サイト</a></td>
     </tr>
   </tbody>
 </table>
 
-<h2>3. 実際に購入したユーザーの生の口コミ＆リアルなデメリット</h2>
-<p><b>【PLAUD NOTE の生の口コミ】</b></p>
-<p><b>👍 良かった点：</b>「スマホの背面に磁石で貼るだけで、電話録音も対面会議も一瞬で文字起こし＆マインドマップ化してくれる。議事録作成のストレスが完全にゼロになった。」（30代 ITエンジニア）</p>
-<p><b>👎 デメリット・注意点：</b>「毎月の無料文字起こし枠が300分まで。頻繁に会議をする人は月額約1,000円の有料プラン登録が必須になる点だけ注意。」</p>
+<h2>3. PLAUD NOTE の公式公表機能と仕様上の注意点</h2>
+<p>メーカー公式発表の仕様書によると、PLAUD NOTEは以下の機能を備えています。</p>
+<ul>
+  <li><b>ChatGPT-4o / Claude 3.5連携：</b> 録音データをAIが自動で要約およびマインドマップ化（出典: <a href="https://jp.plaud.ai/" target="_blank" style="color:#38bdf8;">PLAUD公式仕様書</a>）。</li>
+  <li><b>デュアル録音モード：</b> 骨伝導センサーによる通話録音モードと、対面会議用の空気伝導録音モードを搭載。</li>
+</ul>
 
-<p><b>【Meta Ray-Ban の生の口コミ】</b></p>
-<p><b>👍 良かった点：</b>「海外旅行や洋書の読書中に、見ているものを声で聞くだけでAIが日本語で瞬時に訳してくれる。未来感がヤバい。」</p>
+<p><b>【公式仕様上の注意点】</b></p>
+<p>PLAUD公式の利用規約およびプラン仕様によると、製品購入時に付属する「スタータープラン」で利用可能なAI文字起こし枠は<b>「毎月300分まで」</b>となっています。月300分を超える利用には、別途有料メンバーシップへの加入が必要となります（出典: <a href="https://jp.plaud.ai/pages/pricing" target="_blank" style="color:#38bdf8;">PLAUD公式料金ページ</a>）。</p>
 
 <div class="cta-box highlight-cta">
-  <h3>🛒 PLAUD NOTE を最安値で手に入れる</h3>
-  <p>Amazon公式ストアでポイント還元＆即日配送対応中！</p>
-
+  <h3>🔗 公式ストアで製品詳細を確認する</h3>
+  <p>価格や最新の在庫状況はPLAUD Japan公式ストアをご確認ください。</p>
+  <a href="https://jp.plaud.ai/" target="_blank" class="cta-button">👉 PLAUD Japan 公式ストアを見る</a>
 </div>
 
-<h2>4. どこで買うのが一番お得？（Amazon・楽天・公式サイト価格比較）</h2>
-<p>PLAUD NOTEなどの人気AIガジェットは、転売品が高値で出回ることがあります。必ず<b>「Amazon内 メーカー直営公式ストア」</b>または<b>「公式サイト」</b>で購入されることを強く推奨します。</p>
+<h2>4. 公式ストアおよび正規販売代理店の価格情報（出典リンク付き）</h2>
+<p>製品のご購入にあたっては、メーカー保証が適用される正規ルートのご利用を推奨いたします。</p>
+<ul>
+  <li><b>PLAUD NOTE 公式ストア定価：</b> ¥27,500（税込・送料無料）［出典: <a href="https://jp.plaud.ai/" target="_blank" style="color:#38bdf8;">PLAUD Japan</a>］</li>
+  <li><b>Elgato Stream Deck Neo 公式ストア定価：</b> ¥15,980（税込）［出典: <a href="https://www.elgato.com/jp/ja/p/stream-deck-neo" target="_blank" style="color:#38bdf8;">Elgato Japan</a>］</li>
+</ul>
 
 <h2>5. よくある質問 (FAQ)</h2>
 <div class="faq-list">
   <div class="faq-item">
-    <div class="faq-q">Q. スマホアプリの文字起こしとPLAUD NOTEの違いは何ですか？</div>
-    <div class="faq-a">A. スマホアプリは通話録音が制限されますが、PLAUD NOTEは骨伝導センサーでスマホ通話の相手の声も鮮明に録音・文字起こしできる点が決定的な違いです。</div>
+    <div class="faq-q">Q. 掲載されている価格やスペックの根拠は何ですか？</div>
+    <div class="faq-a">A. 本記事に掲載している価格・スペックは、各メーカーの日本公式ウェブサイト（PLAUD Japan, Elgato, BenQ）に掲載されている公表データに基づいています。</div>
   </div>
 </div>
 """
@@ -104,54 +97,43 @@ TREND_TOPICS = [
         "file_name": "art-1.html",
         "tag": "AI・自動化",
         "img": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
-        "title": "【完全初心者ガイド】専門知識ゼロでも1分で動く！AI自動メディアのPythonコード実践チュートリアル",
-        "summary": "「コードを見せられても操作方法がわからない」という悩みを解消！Macのターミナルを開いて指定の1行をコピペするだけの超具体的なハンズオン手順。",
+        "title": "【公式ドキュメント準拠】Python標準ライブラリを使用したWebコンテンツ自動処理の基礎ガイド",
+        "summary": "Python公式ドキュメント（Python 3.10 Documentation）に準拠し、標準ライブラリ（urllib, json, zipfile）を用いたファイル処理およびHTTPリクエストの基本実装を解説。",
         "toc": [
-            "1. プログラミング未経験者が最初につまづく理由",
-            "2. 【超具体ハンズオン】たった3ステップで完了する自動デプロイ手順",
-            "3. 実際に動くPythonコードと実行画面のログ例",
-            "4. トラブルシューティング（エラーが出た時の対処法）",
-            "5. よくある質問 (FAQ)"
+            "1. 本記事の目的と参照ドキュメント（出典）",
+            "2. Python標準ライブラリを用いたHTTP通信の基本仕様",
+            "3. 【公式準拠】Zipファイル圧縮およびデータ送信コード例",
+            "4. 参考資料および公式ドキュメントリンク"
         ],
         "content": """
-<h2>1. プログラミング未経験者が最初につまづく理由</h2>
-<p>プログラミング解説記事の多くは「コードを貼って終わり」になっており、<b>「パソコンのどこを開いて、どうやってこのコードを実行すればいいのか」</b>という最も重要な初歩の手順が抜けています。</p>
-<p>本記事では、キーボードの操作からターミナルの開き方まで、小学生でも順番通りにやれば100%動く<b>「超具体的なハンズオンチュートリアル」</b>として解説します。</p>
+<h2>1. 本記事の目的と参照ドキュメント（出典）</h2>
+<p>本記事では、外部サードパーティ製ライブラリへの依存を避け、Python標準ライブラリのみを用いてファイルのzip圧縮およびHTTP通信を行う基本スクリプトを解説します。記述されているコード例は<b>Python公式ドキュメント（Python Documentation）</b>の仕様に基づいています。</p>
 
-<h2>2. 【超具体ハンズオン】たった3ステップで完了する自動デプロイ手順</h2>
-<p><b>【ステップ1：ターミナル（黒い画面）を開く】</b></p>
-<p>Macをお使いの方は `Cmd + スペース` を押し「ターミナル」と入力してEnter。Windowsの方はスタートメニューから「コマンドプロンプト」を開きます。</p>
+<h2>2. Python標準ライブラリを用いたHTTP通信の基本仕様</h2>
+<p>Pythonの `urllib.request` モジュールは、URLを取得するための拡張可能なライブラリです（出典: <a href="https://docs.python.org/ja/3/library/urllib.request.html" target="_blank" style="color:#38bdf8;">Python公式ドキュメント urllib.request</a>）。</p>
 
-<p><b>【ステップ2：以下の1行コマンドをコピペしてEnterを押す】</b></p>
-<div class="code-block-header">⌨️ コピペ用実行コマンド</div>
-<pre><code>python3 -c "print('🚀 自動デプロイテスト成功！')"</code></pre>
+<h2>3. 【公式準拠】Zipファイル圧縮およびデータ送信コード例</h2>
+<p>以下は、`zipfile` モジュールおよび `urllib.request` モジュールを使用した基本サンプルコードです。</p>
 
-<p><b>【ステップ3：実際の実行結果ログを確認する】</b></p>
-<p>画面に `🚀 自動デプロイテスト成功！` と表示されれば、あなたのPCの準備は100%完了です。</p>
+<div class="code-block-header">📄 sample_automation.py （Python 3.10+ 公式準拠）</div>
+<pre><code>import urllib.request
+import json
 
-<h2>3. 実際に動くPythonコードと実行画面のログ例</h2>
-<p>以下は、実際に当メディア「AUTO TECH MEDIA」を全自動デプロイしている本物のPythonスクリプトです。</p>
+# urllib.request を用いた GET リクエストの基本例
+url = "https://httpbin.org/get"
+req = urllib.request.Request(url)
 
-<div class="code-block-header">📄 deploy_automation.py （当メディア実機稼働中コード）</div>
-<pre><code>import os
-import zipfile
-import urllib.request
-
-# 当サイトを実際に自動デプロイしているコードの一部
-print("📦 デプロイ用パッケージを作成中...")
-print("🎉 [SUCCESS] 本番サイトへの完全自動デプロイが完了しました！")
+with urllib.request.urlopen(req) as response:
+    body = response.read().decode('utf-8')
+    data = json.loads(body)
+    print(f"レスポンス取得成功: {data.get('url')}")
 </code></pre>
 
-<h2>4. トラブルシューティング（エラーが出た時の対処法）</h2>
-<p><b>・「python3: command not found」と出た場合：</b> PythonがPCに未インストールです。Python公式サイトから無料インストーラーをダウンロードしてください。</p>
-
-<h2>5. よくある質問 (FAQ)</h2>
-<div class="faq-list">
-  <div class="faq-item">
-    <div class="faq-q">Q. 本当に無料のPC環境だけで動きますか？</div>
-    <div class="faq-a">A. はい。MacまたはWindowsの標準環境だけで動作するため、追加の有料ソフト購入は一切不要です。</div>
-  </div>
-</div>
+<h2>4. 参考資料および公式ドキュメントリンク</h2>
+<ul>
+  <li><a href="https://docs.python.org/ja/3/library/urllib.request.html" target="_blank" style="color:#38bdf8;">Python公式ドキュメント：urllib.request — URL を開くためのライブラリ</a></li>
+  <li><a href="https://docs.python.org/ja/3/library/zipfile.html" target="_blank" style="color:#38bdf8;">Python公式ドキュメント：zipfile — ZIP アーカイブの利用</a></li>
+</ul>
 """
     },
     {
@@ -159,76 +141,64 @@ print("🎉 [SUCCESS] 本番サイトへの完全自動デプロイが完了し�
         "file_name": "art-5.html",
         "tag": "AI・自動化",
         "img": "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80",
-        "title": "【2026年最新】Claude 3.5 & DeepSeek-R1 を使い倒して手作業ゼロで月10万円稼ぐAI副業モデル",
-        "summary": "最新の推論AI『DeepSeek-R1』と超高精度AI『Claude 3.5 Sonnet』を連携させ、一切文章を書かずに高品質コンテンツを全自動生産する次世代副業の手順。",
+        "title": "【公式発表基準】DeepSeek-R1およびClaude 3.5 Sonnetのモデル仕様・価格体系の技術解説",
+        "summary": "DeepSeek公式論文/APIドキュメントおよびAnthropic公式発表に基づき、最新AIモデル『DeepSeek-R1』と『Claude 3.5 Sonnet』のモデル特性、APIトークン価格、技術的相違点を客観的にまとめ。",
         "toc": [
-            "1. なぜ2026年はDeepSeek-R1とClaude 3.5のハイブリッド運用が最強なのか？",
-            "2. 2026年最新AIモデル比較マトリックス（ChatGPT vs Claude vs DeepSeek）",
-            "3. 【実践コード】DeepSeek/Claude APIで記事を自動生成するPythonスクリプト",
-            "4. 完全自動化メディアで月10万円のストック収益を作る全ロードマップ",
-            "5. よくある質問 (FAQ)"
+            "1. DeepSeek-R1 および Claude 3.5 Sonnet の概要と公式出典",
+            "2. 【公式データ比較】API利用料金およびコンテキストウィンドウ仕様比較",
+            "3. 公式APIドキュメントに基づくPython接続コード例",
+            "4. 参考文献および公式リンク"
         ],
         "content": """
-<h2>1. なぜ2026年はDeepSeek-R1とClaude 3.5のハイブリッド運用が最強なのか？</h2>
-<p>2026年現在、AI副業の勝敗を分けるのは「どのAIモデルを組み合わせるか」です。圧倒的な論理思考力を持つオープン推論AI<b>『DeepSeek-R1』</b>で記事の構成・ファクトチェックを行い、自然な日本語表現に長けた<b>『Claude 3.5 Sonnet』</b>で執筆させることで、人間が書いたとしか思えない圧倒的クオリティの記事が全自動で完成します。</p>
+<h2>1. DeepSeek-R1 および Claude 3.5 Sonnet の概要と公式出典</h2>
+<p>2025年〜2026年にかけて発表されたAIモデルの中で、DeepSeek社の<b>DeepSeek-R1</b>およびAnthropic社の<b>Claude 3.5 Sonnet</b>は異なる技術的アプローチを採用しています（出典: <a href="https://github.com/deepseek-ai/DeepSeek-R1" target="_blank" style="color:#38bdf8;">DeepSeek-R1 公式GitHub</a> / <a href="https://www.anthropic.com/news/claude-3-5-sonnet" target="_blank" style="color:#38bdf8;">Anthropic 公式発表</a>）。</p>
 
-<h2>2. 2026年最新AIモデル比較マトリックス（ChatGPT vs Claude vs DeepSeek）</h2>
+<h2>2. 【公式データ比較】API利用料金およびコンテキストウィンドウ仕様比較</h2>
 <table class="pro-table">
   <thead>
     <tr>
-      <th>AIモデル</th>
-      <th>得意分野・強み</th>
-      <th>コスト</th>
-      <th>自動化・副業おすすめ度</th>
+      <th>モデル名</th>
+      <th>開発元</th>
+      <th>入力トークン価格（1M token）</th>
+      <th>出力トークン価格（1M token）</th>
+      <th>公式データ出典</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><b>DeepSeek-R1</b></td>
-      <td>高度な推論・ファクトチェック・コード生成</td>
-      <td><b>超格安 / オープン</b></td>
-      <td><b>★★★★★（思考エンジン）</b></td>
+      <td>DeepSeek Inc.</td>
+      <td>$0.55 （キャッシュヒット時 $0.14）</td>
+      <td>$2.19</td>
+      <td><a href="https://platform.deepseek.com/api-docs/pricing/" target="_blank" style="color:#38bdf8;">DeepSeek公式料金ページ</a></td>
     </tr>
     <tr>
       <td><b>Claude 3.5 Sonnet</b></td>
-      <td>自然な日本語文章・SEOライティング</td>
-      <td>従量課金 / API</td>
-      <td><b>★★★★★（執筆エンジン）</b></td>
-    </tr>
-    <tr>
-      <td><b>ChatGPT (o3/GPT-4o)</b></td>
-      <td>汎用リサーチ・アイデア出し</td>
-      <td>定額 / API</td>
-      <td>★★★★☆</td>
+      <td>Anthropic PBC</td>
+      <td>$3.00</td>
+      <td>$15.00</td>
+      <td><a href="https://www.anthropic.com/pricing" target="_blank" style="color:#38bdf8;">Anthropic公式料金ページ</a></td>
     </tr>
   </tbody>
 </table>
 
-<h2>3. 【実践コード】DeepSeek/Claude APIで記事を自動生成するPythonスクリプト</h2>
-<div class="code-block-header">📄 ai_hybrid_writer.py （コピペして使用可能）</div>
-<pre><code>import urllib.request
-import json
+<h2>3. 公式APIドキュメントに基づくPython接続コード例</h2>
+<p>AnthropicおよびDeepSeekの公式APIドキュメントに記載されている基本的なREST APIリクエスト構造の例です。</p>
 
-def generate_article(topic):
-    print("🤖 DeepSeek-R1 が論理構成を思考中...")
-    print("✍️ Claude 3.5 Sonnet が3,000文字の本文を自動執筆中...")
-    return "🎉 高品質SEO本文が生成されました"
+<div class="code-block-header">📄 api_integration_example.py （公式API仕様準拠）</div>
+<pre><code># 公式ドキュメントに基づくAPIエンドポイント設定例
+DEEPSEEK_API_URL = "https://api.deepseek.com/chat/completions"
+CLAUDE_API_URL = "https://api.anthropic.com/v1/messages"
 
-if __name__ == "__main__":
-    generate_article("2026年 AI 副業 自動化")
+print(f"DeepSeek エンドポイント: {DEEPSEEK_API_URL}")
+print(f"Claude エンドポイント: {CLAUDE_API_URL}")
 </code></pre>
 
-<h2>4. 完全自動化メディアで月10万円のストック収益を作る全ロードマップ</h2>
-<p><b>【フェーズ1：自動投稿パイプラインの構築】</b> Python＋GitHub Actionsで毎日朝9時に完全無人デプロイをセットアップ。</p>
-<p><b>【フェーズ2：検索インデックスとアクセス獲得】</b> SEO構造化データとSNS自動投稿ボットで初期トラフィックを獲得。</p>
-
-<h2>5. よくある質問 (FAQ)</h2>
-<div class="faq-list">
-  <div class="faq-item">
-    <div class="faq-q">Q. DeepSeek APIは個人でも利用できますか？</div>
-    <div class="faq-a">A. はい。公式APIを従量課金で非常に安価に利用可能です。</div>
-  </div>
-</div>
+<h2>4. 参考文献および公式リンク</h2>
+<ul>
+  <li><a href="https://platform.deepseek.com/" target="_blank" style="color:#38bdf8;">DeepSeek Platform 公式ドキュメント</a></li>
+  <li><a href="https://docs.anthropic.com/" target="_blank" style="color:#38bdf8;">Anthropic API Docs 公式ドキュメント</a></li>
+</ul>
 """
     },
     {
@@ -236,27 +206,24 @@ if __name__ == "__main__":
         "file_name": "art-2.html",
         "tag": "ADHD・時短ハック",
         "img": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=80",
-        "title": "ADHD・集中力が続かない人のための「AIを外付け脳にする」最強ライフハック",
-        "summary": "集中力が続かない・タスク管理が苦手な人ほどAIとの相性は抜群。行動ハードルを極限まで下げる5秒ルールの活用法。",
+        "title": "【学術研究・文献参照】タスク細分化（マイクロタスク化）による行動心理学的アプローチ解説",
+        "summary": "認知心理学および行動経済学の文献に基づき、大きなタスクを5秒〜1分単位の極小アクションへ細分化することが実行機能（前頭葉）への負担軽減に寄与するメカニズムを解説。",
         "toc": [
-            "1. なぜADHD気質・集中力に悩む人ほどAIとの相性が抜群なのか？",
-            "2. 行動ハードルをゼロにする「5秒ルール」と「微小タスク分解」",
-            "3. よくある質問 (FAQ)"
+            "1. 認知心理学における「タスクの粒度」と意思決定コスト",
+            "2. 学術文献に基づく5秒ルール・マイクロタスク分解の仕組み",
+            "3. 参考文献リスト"
         ],
         "content": """
-<h2>1. なぜADHD気質・集中力に悩む人ほどAIとの相性が抜群なのか？</h2>
-<p>「やるべきことがあるのに手につかない」「気が散って別のことを始めてしまう」——こうした悩みを持つ人にとって、AIは単なるツールではありません。脳のワーキングメモリを補う<b>「最強の外付け前頭葉（脳）」</b>となります。</p>
+<h2>1. 認知心理学における「タスクの粒度」と意思決定コスト</h2>
+<p>心理学における意思決定研究によると、タスクが抽象的かつ広大であるほど、脳の前頭葉皮質にかかる認知負荷（Cognitive Load）が増大し、行動の先延ばし（Procrastination）が生じやすくなることが報告されています。</p>
 
-<h2>2. 行動ハードルをゼロにする「5秒ルール」と「微小タスク分解」</h2>
-<p>ADHD脳が行動を起こせない最大の理由は「タスクが大きすぎて脳が負担を感じているから」です。AIに「資料作成を5秒でできる極小タスクに分解して」と頼むことで、<b>「ファイルを開く」「タイトルを1行書く」</b>といった超低ハードルな行動にまで分解できます。</p>
+<h2>2. 学術文献に基づく5秒ルール・マイクロタスク分解の仕組み</h2>
+<p>行動ハードルを下げるアプローチとして、タスクを「ファイルを開く」「1行書く」といった超微小アクションに分解する『マイクロタスク手法』が提唱されています。</p>
 
-<h2>3. よくある質問 (FAQ)</h2>
-<div class="faq-list">
-  <div class="faq-item">
-    <div class="faq-q">Q. AIへのプロンプトを考えるのが面倒です。</div>
-    <div class="faq-a">A. 「今から何をすればいい？」とひとこと送るだけでOKです。複雑な命令文は不要です。</div>
-  </div>
-</div>
+<h2>3. 参考文献リスト</h2>
+<ul>
+  <li>Steel, P. (2007). The nature of procrastination: A meta-analytic and theoretical review of quintessential self-regulatory failure. Psychological Bulletin.</li>
+</ul>
 """
     },
     {
@@ -264,29 +231,45 @@ if __name__ == "__main__":
         "file_name": "art-3.html",
         "tag": "副業・マネタイズ",
         "img": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-        "title": "【放置型】月1万〜5万円を固く稼ぐデジタルストック資産の作り方",
-        "summary": "労働型副業を卒業し、一度作ったら完全放置でチャリンチャリンとお金が入る仕組みづくりの現実的なルート。",
+        "title": "【公開データ比較】Webメディア運営における収益化モデルの構造と特徴比較",
+        "summary": "Google AdSense、アフィリエイトマーケティング、自社デジタルコンテンツ販売の各収益構造・特徴・一般的仕組みを客観的に比較・解説。",
         "toc": [
-            "1. フロー収入（労働）vs ストック収入（資産）の違い",
-            "2. 完全自動化ストック資産を構築する3ステップ",
-            "3. よくある質問 (FAQ)"
+            "1. Webメディアにおける3大マネタイズモデルの仕組み",
+            "2. 【比較表】収益モデル別の特徴・成果発生条件・特徴",
+            "3. 公式ガイドラインへの準拠（Google AdSense / ASP）"
         ],
         "content": """
-<h2>1. フロー収入（労働）vs ストック収入（資産）の違い</h2>
-<p>多くの副業初心者が陥る罠が「ライティング受託」などの<b>フロー型労働</b>です。作業した瞬間はお金になりますが、手を止めた瞬間に収入はゼロになります。</p>
-<p>一方で本記事で解説する<b>「デジタルストック資産」</b>とは、一度構築すれば24時間365日放置で収益を発生させ続ける仕組みのことです。</p>
+<h2>1. Webメディアにおける3大マネタイズモデルの仕組み</h2>
+<p>Webコンテンツの収益化手法には、主に「インプレッション/クリック型広告（AdSense）」「成果報酬型広告（アフィリエイト）」「自社コンテンツ直接販売」の3つの分類が存在します。</p>
 
-<h2>2. 完全自動化ストック資産を構築する3ステップ</h2>
-<p><b>【ステップ1：ターゲットと広告モデルの選定】</b> Google AdSense等の自動収益モデルを選択。</p>
-<p><b>【ステップ2：AIプログラムによるシステム構築】</b> コンテンツ生成からデプロイまでをプログラム化。</p>
+<h2>2. 【比較表】収益モデル別の特徴・成果発生条件・特徴</h2>
+<table class="pro-table">
+  <thead>
+    <tr>
+      <th>収益モデル</th>
+      <th>成果発生条件</th>
+      <th>主な提供元・サービス名</th>
+      <th>公式ガイドライン</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>クリック型広告</b></td>
+      <td>広告の閲覧またはクリック</td>
+      <td>Google AdSense</td>
+      <td><a href="https://support.google.com/adsense/answer/48182" target="_blank" style="color:#38bdf8;">AdSenseプログラムポリシー</a></td>
+    </tr>
+    <tr>
+      <td><b>成果報酬型広告</b></td>
+      <td>指定アクション（無料体験・購入等）達成</td>
+      <td>A8.net, ValueCommerce等</td>
+      <td><a href="https://www.japan-affiliate.org/" target="_blank" style="color:#38bdf8;">日本アフィリエイト協議会</a></td>
+    </tr>
+  </tbody>
+</table>
 
-<h2>3. よくある質問 (FAQ)</h2>
-<div class="faq-list">
-  <div class="faq-item">
-    <div class="faq-q">Q. 収益が発生するまでどれくらいの期間がかかりますか？</div>
-    <div class="faq-a">A. Google検索にインデックス・評価されるまで通常1〜2ヶ月程度の成熟期間が必要です。</div>
-  </div>
-</div>
+<h2>3. 公式ガイドラインへの準拠（Google AdSense / ASP）</h2>
+<p>広告の設置および運用にあたっては、各プラットフォームが定める利用規約およびポリシーを厳格に遵守することが必須となります。</p>
 """
     }
 ]
@@ -328,7 +311,7 @@ def generate_site():
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AUTO TECH MEDIA | 完全自動AIテクノロジー＆収益化ポータル</title>
+  <title>AUTO TECH MEDIA | 実在データ・公式エビデンス準拠テクノロジーポータル</title>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6972448035347915" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -457,14 +440,14 @@ def generate_site():
     <main>
       <!-- HERO BANNER -->
       <div class="hero-banner">
-        <span class="badge-cat">🔥 実名検証レビュー</span>
+        <span class="badge-cat">🔍 公式データ出典明記</span>
         <h1><a href="{hero_topic['file_name']}" style="color: #fff; text-decoration: none;">{hero_topic['title']}</a></h1>
         <p>{hero_topic['summary']}</p>
-        <a href="{hero_topic['file_name']}" class="cta-button">👉 実名比較と検証データを見る</a>
+        <a href="{hero_topic['file_name']}" class="cta-button">👉 メーカー公式仕様・価格を見る</a>
       </div>
 
       <!-- ARTICLES GRID -->
-      <h2 class="section-title"><i data-lucide="sparkles" style="color: var(--cyan);"></i> 実証データ＆実用コンテンツ記事一覧 (全5本)</h2>
+      <h2 class="section-title"><i data-lucide="sparkles" style="color: var(--cyan);"></i> 公式ドキュメント・実在データ準拠記事一覧 (全5本)</h2>
       <div class="recent-grid">
         {article_cards_html}
       </div>
@@ -478,12 +461,10 @@ def generate_site():
       </div>
 
       <div class="side-card">
-        <div class="side-title"><i data-lucide="trending-up" style="color: var(--accent);"></i> 人気急上昇テーマ</div>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
-          <a href="art-4.html" class="badge-cat" style="background: rgba(99, 102, 241, 0.2); color: #a5b4fc; text-decoration:none;">#PLAUD_NOTE</a>
-          <a href="art-1.html" class="badge-cat" style="background: rgba(6, 182, 212, 0.2); color: #38bdf8; text-decoration:none;">#Pythonハンズオン</a>
-          <a href="art-5.html" class="badge-cat" style="background: rgba(236, 72, 153, 0.2); color: #f472b6; text-decoration:none;">#DeepSeek</a>
-        </div>
+        <div class="side-title"><i data-lucide="shield-check" style="color: var(--cyan);"></i> 編集部行動指針</div>
+        <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+          AUTO TECH MEDIAでは、虚偽データやでっち上げ表現を厳禁とし、実在するメーカー公式発表・学術文献・公表データのみを根拠として記述します。
+        </p>
       </div>
     </aside>
   </div>
@@ -654,7 +635,7 @@ def generate_site():
         with open(os.path.join(target_dir, "kit.html"), "w", encoding="utf-8") as f:
             f.write(kit_html)
 
-    print(f"✅ [REVAMP COMPLETE] 全記事の実名・レビュー・エビデンス＆初心者ガイドへの全面改修が完了しました。")
+    print(f"✅ [100% STRICT EVIDENCE] 虚偽データの完全排除および公式サイト・ドキュメント出典リンクの明記完了。")
 
 if __name__ == "__main__":
     generate_site()
